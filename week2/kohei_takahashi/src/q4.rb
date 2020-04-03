@@ -157,7 +157,7 @@ class Wizard < Character
     puts "#{self.name}の回復魔法！"
     return puts "しかし．#{self.name}にはもうMPが残っていない！\n\n" if @mp <= 0
     return puts "しかし．#{self.name}にはもう体力が残っていない！\n\n" if @hp <= 0
-    return puts "残念！敵に回復魔法を使うことはできないよ！\n\n" if character.class == Slime
+    return puts "残念！敵に回復魔法を使うことはできないよ！\n\n" if character.class == Slime || character.class == FireSlime
     return puts "しかし，既に#{character.name}のHPは全快だ！\n\n" if character.hp == character.initial_hp
     
     character.hp += @cure_power 
